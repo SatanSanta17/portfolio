@@ -1,20 +1,17 @@
+import Card from "../ui/Card";
 export default function ProjectsSection({ projects }) {
   return (
-    <div
-      className="d-flex flex-column justify-content-center align-items-center rounded mt-5 p-3"
-      id="projects"
-    >
-      <h1>Projects</h1>
-      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mt-md-1">
+    <div className="flex flex-col gap-4 justify-center text-center mt-4 md:mt-8">
+      <h1 className="text-2xl md:text-3xl font-semibold">Projects</h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {projects.map((project) => (
-          <div className="project col" key={project.title}>
-            <div className="card h-100">
-              <div className="card-body">
-                <h5 className="card-title">{project.title}</h5>
-                <p className="card-text">{project.description}</p>
-              </div>
-            </div>
-          </div>
+          <Card
+            key={project.title}
+            title={project.title}
+            description={project.description}
+            tags={project.tags}
+            link={project.link}
+          />
         ))}
       </div>
     </div>

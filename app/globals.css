@@ -14,4 +14,14 @@
     display: none;            /* Chrome/Safari */
   }
 }
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
 

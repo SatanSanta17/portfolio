@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function AboutSection({ skills }) {
   return (
-    <div className="d-flex flex-md-row flex-column justify-content-center mt-5 px-md-3">
-      <div className="col-12 col-md-5">
+    <div className="grid grid-cols-1 md:grid-cols-3 md:gap-8 justify-center text-center">
+      <div className="">
         <Image
-          className="profileImage"
+          className=""
           src="/img/burhanuddin-main.jpg"
           alt="Burhanuddin Chitalwala portrait"
           width={640}
@@ -13,44 +13,46 @@ export default function AboutSection({ skills }) {
           priority
         />
       </div>
-      <div className="col-12 col-md-7 px-md-4 mt-4 mt-md-0" id="aboutMe">
-        <h1>What I Do...</h1>
-        <ul>
-          <li className="fs-4">
-            I am an aspiring Software Developer with a strong foundation in
-            Java and a deep interest in the transformative fields of Machine
-            Learning (ML) and Artificial Intelligence (AI).
-          </li>
-          <li className="fs-4">
-            Passionate about solving complex problems, I thrive on exploring
-            innovative solutions and continuously expanding my skill set to
-            stay at the forefront of technology.
-          </li>
-          <li className="fs-4">
-            Whether it&apos;s building robust applications or diving into
-            intelligent algorithms, I am eager to contribute and grow in the
-            ever-evolving world of software development.
-          </li>
-          <li className="fs-4">
-            &quot;Every once in a while, a new technology, an old problem, and a
-            great idea turn into an innovation.&quot;
-            <span className="fst-italic fw-normal"> - Dean Kamen</span>
-          </li>
-        </ul>
-
-        <div className="skills" id="skills">
-          <h1 className="cardheadingSkills">Skills</h1>
-          {skills.map((skill) => (
-            <Image
-              key={skill.title}
-              className="skill"
-              title={skill.title}
-              src={skill.src}
-              alt={skill.alt}
-              width={50}
-              height={50}
-            />
-          ))}
+      <div className="flex col-span-2 flex-col justify-start text-start gap-2 md:gap-8">
+        <div className="mt-4 md:mt-0">
+          <h1 className="text-2xl md:text-3xl font-semibold">What I Do...</h1>
+          <div className="text-md md:text-xl md:w-[90%]">
+            I am a Full-Stack Software Developer driven by a deep passion for
+            building intelligent, scalable systems that merge creativity with
+            engineering precision. With hands-on experience across Next.js,
+            React, and Android (Kotlin) ecosystems, I’ve delivered impactful,
+            AI-integrated products from in-car voice assistants powered by LLMs
+            to Next.js-based AdTech platforms serving global-scale audiences.
+            What excites me most is the intersection of software craftsmanship
+            and innovation where clean architecture meets problem-solving with
+            purpose. I believe great engineering is not just about writing
+            efficient code, but designing systems that scale, adapt, and
+            inspire. Over the years, I’ve learned why foundational principles
+            like modularity, reusability, and maintainability aren’t just best
+            practices, they’re the building blocks of long-term innovation.
+            Beyond code, I’m committed to sharing insights and learning openly,
+            contributing to the developer community through thought leadership
+            and collaboration. My approach is always solution-first and
+            scalable, guided by curiosity, discipline, and the belief that the
+            right blend of technology and empathy can transform how people
+            interact with the digital world.
+          </div>
+        </div>
+        <div className="flex flex-col gap-2 md:gap-4">
+          <h1 className="text-xl md:text-2xl font-semibold">Skills</h1>
+          <div className="flex flex-wrap justify-start gap-2 sm:gap-4">
+            {skills.map((skill) => (
+              <Image
+                key={skill.title}
+                className="w-12 h-12 sm:w-20 sm:h-20 object-cover hover:scale-110 transition-all duration-300"
+                title={skill.title}
+                src={skill.src}
+                alt={skill.alt}
+                width={75}
+                height={75}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
