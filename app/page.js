@@ -5,10 +5,12 @@ import ProjectsSection from "./components/ProjectsSection";
 import VisionSection from "./components/VisionSection";
 import HobbiesCarousel from "./components/HobbiesCarousel";
 import SocialLinks from "./components/SocialLinks";
+import UnderConstructionOverlay from "./components/UnderConstructionOverlay";
 import { skills, projects, socialLinks, carouselItems } from "./data/siteData";
 export default function Home() {
+  const SHOW_UNDER_CONSTRUCTION = true;
   return (
-    <div className="h-screen w-screen overflow-hidden bg-[url('/img/bg-img.jpg')] bg-cover bg-center bg-fixed">
+    <div className="relative h-screen w-screen overflow-hidden bg-[url('/img/bg-img.jpg')] bg-cover bg-center bg-fixed">
       <div className="flex h-full w-full flex-col bg-white/10 backdrop-blur-[20px] py-2">
         <NavBar />
         <div className="w-[95%] mx-auto flex flex-col rounded-lg bg-white/60 p4 md:px-8 md:py-6 overflow-y-auto scrollbar-hide gap-4 md:gap-8">
@@ -20,6 +22,7 @@ export default function Home() {
           <SocialLinks links={socialLinks} />
         </div>
       </div>
+      {SHOW_UNDER_CONSTRUCTION ? <UnderConstructionOverlay /> : null}
     </div>
   );
 }
