@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function SocialLinks({ links }) {
   return (
-    <div className="w-full flex flex-column justify-center items-center text-center">
+    <div className="w-full flex flex-col justify-center items-center text-center">
       <h1>Let&apos;s Connect!</h1>
       <div className="w-[80%] md:w-[40%] flex justify-around text-center">
         {links.map((link) => (
