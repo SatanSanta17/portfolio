@@ -1,4 +1,4 @@
-import Card from "../ui/Card";
+import Card from "../../../ui/Card";
 export default function ProjectsSection({ projects }) {
   return (
     <div className="flex flex-col gap-4 justify-center text-center mt-4 md:mt-8">
