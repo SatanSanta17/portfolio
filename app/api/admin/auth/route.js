@@ -4,12 +4,11 @@ import { validatePassword } from "../../../services/auth/validatePassword";
 const COOKIE_NAME = "admin-auth";
 const COOKIE_OPTIONS = {
   name: COOKIE_NAME,
-  value:timestamp,
   httpOnly: true,
   secure: process.env.NODE_ENV === "production",
   sameSite: "strict",
   path: "/",
-  maxAge:undefined
+  maxAge: undefined,
   // No Expires or Max-Age - this makes it a session cookie (cleared on browser close)
 };
 
